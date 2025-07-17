@@ -5,7 +5,7 @@ import {
   AcademicCapIcon,
   BookOpenIcon,
   CalendarIcon,
-  DocumentReportIcon,
+  DocumentTextIcon,
   CogIcon
 } from '@heroicons/react/24/outline';
 
@@ -17,7 +17,7 @@ export default function Sidebar() {
     { name: 'Classes', href: '/admin/classes', icon: UsersIcon },
     { name: 'Cours', href: '/admin/cours', icon: BookOpenIcon },
     { name: 'Séances', href: '/admin/seances', icon: CalendarIcon },
-    { name: 'Exports', href: '/admin/exports', icon: DocumentReportIcon },
+    { name: 'Exports', href: '/admin/exports', icon: DocumentTextIcon },
     { name: 'Paramètres', href: '/admin/settings', icon: CogIcon },
   ];
 
