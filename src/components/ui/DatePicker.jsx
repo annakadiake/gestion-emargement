@@ -1,10 +1,8 @@
 import { useState } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 
 export default function CustomDatePicker({ 
   label, 
-  selected, 
+  value, 
   onChange, 
   className = '', 
   ...props 
@@ -17,11 +15,11 @@ export default function CustomDatePicker({
         </label>
       )}
       <div className="mt-1">
-        <DatePicker
-          selected={selected}
+        <input
+          type="date"
+          value={value}
           onChange={onChange}
           className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
-          dateFormat="dd/MM/yyyy"
           {...props}
         />
       </div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { getCours, updateCours } from '../../../services/cours';
+import { getCoursById, updateCours } from '../../../services/cours';
 import Button from '../../../components/ui/Button';
 import Input from '../../../components/ui/Input';
 
@@ -17,7 +17,7 @@ export default function CoursEdit() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await getCours(id);
+        const data = await getCoursById(id);
         setFormData({
           matiere: data.matiere
         });

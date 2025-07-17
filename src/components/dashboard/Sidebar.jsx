@@ -7,7 +7,7 @@ import {
   CalendarIcon,
   DocumentReportIcon,
   CogIcon
-} from '@heroicons/react/outline';
+} from '@heroicons/react/24/outline';
 
 export default function Sidebar() {
   const navigation = [

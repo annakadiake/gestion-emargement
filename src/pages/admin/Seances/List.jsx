@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { format } from 'date-fns';
-import { fr } from 'date-fns/locale';
 import { getSeances } from '../../../services/seances';
 import Button from '../../../components/ui/Button';
 import Table from '../../../components/ui/Table';
@@ -37,7 +35,7 @@ export default function SeancesList() {
     { 
       header: 'Date', 
       accessor: 'date',
-      render: (row) => format(new Date(row.date), 'PPP', { locale: fr })
+      render: (row) => new Date(row.date).toLocaleDateString('fr-FR')
     },
     { 
       header: 'Heure', 

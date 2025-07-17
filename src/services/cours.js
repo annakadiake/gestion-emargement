@@ -5,6 +5,11 @@ export const getCours = async () => {
   return response.data;
 };
 
+export const getCoursById = async (id) => {
+  const response = await api.get(`/cours/${id}/`);
+  return response.data;
+};
+
 export const getCoursWithDetails = async () => {
   const response = await api.get('/cours/?details=true');
   return response.data;

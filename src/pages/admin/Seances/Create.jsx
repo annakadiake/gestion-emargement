@@ -7,7 +7,7 @@ import { useProfesseurs } from '../../../hooks/useProfesseurs';
 import Button from '../../../components/ui/Button';
 import Input from '../../../components/ui/Input';
 import Select from '../../../components/ui/Select';
-import DatePicker from '../../../components/ui/DatePicker';
+import CustomDatePicker from '../../../components/ui/DatePicker';
 
 export default function SeanceCreate() {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ export default function SeanceCreate() {
     cours: '',
     classe: '',
     professeur: '',
-    date: new Date(),
+    date: new Date().toISOString().split('T')[0],
     heure_debut: '08:00',
     heure_fin: '09:00'
   });
@@ -33,7 +33,7 @@ export default function SeanceCreate() {
     try {
       await createSeance({
         ...formData,
-        date: formData.date.toISOString().split('T')[0]
+        date: formData.date
       });
       navigate('/admin/seances');
     } catch (err) {
@@ -104,10 +104,10 @@ export default function SeanceCreate() {
             </div>
             
             <div className="sm:col-span-3">
-              <DatePicker
+              <CustomDatePicker
                 label="Date"
-                selected={formData.date}
-                onChange={(date) => setFormData({...formData, date})}
+                value={formData.date}
+                onChange={(e) => setFormData({...formData, date: e.target.value})}
                 required
               />
             </div>

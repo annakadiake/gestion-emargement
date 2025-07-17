@@ -5,6 +5,11 @@ export const getEtudiants = async () => {
   return response.data;
 };
 
+export const getEtudiant = async (id) => {
+  const response = await api.get(`/etudiants/${id}/`);
+  return response.data;
+};
+
 export const createEtudiant = async (etudiantData) => {
   const response = await api.post('/etudiants/', etudiantData);
   return response.data;

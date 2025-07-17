@@ -7,7 +7,7 @@ import { useProfesseurs } from '../../../hooks/useProfesseurs';
 import Button from '../../../components/ui/Button';
 import Input from '../../../components/ui/Input';
 import Select from '../../../components/ui/Select';
-import DatePicker from '../../../components/ui/DatePicker';
+import CustomDatePicker from '../../../components/ui/DatePicker';
 
 export default function SeanceEdit() {
   const { id } = useParams();
@@ -20,7 +20,7 @@ export default function SeanceEdit() {
     cours: '',
     classe: '',
     professeur: '',
-    date: new Date(),
+    date: '',
     heure_debut: '08:00',
     heure_fin: '09:00'
   });
@@ -36,7 +36,7 @@ export default function SeanceEdit() {
           cours: data.cours.id,
           classe: data.classe.id,
           professeur: data.professeur.id,
-          date: new Date(data.date),
+          date: data.date,
           heure_debut: data.heure_debut,
           heure_fin: data.heure_fin
         });
@@ -56,7 +56,7 @@ export default function SeanceEdit() {
     try {
       await updateSeance(id, {
         ...formData,
-        date: formData.date.toISOString().split('T')[0]
+        date: formData.date
       });
       navigate('/admin/seances');
     } catch (err) {
@@ -129,10 +129,10 @@ export default function SeanceEdit() {
             </div>
             
             <div className="sm:col-span-3">
-              <DatePicker
+              <CustomDatePicker
                 label="Date"
-                selected={formData.date}
-                onChange={(date) => setFormData({...formData, date})}
+                value={formData.date}
+                onChange={(e) => setFormData({...formData, date: e.target.value})}
                 required
               />
             </div>

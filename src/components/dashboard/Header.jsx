@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import { Menu, Transition } from '@headlessui/react';
-import { ChevronDownIcon, UserCircleIcon, CogIcon, LogoutIcon } from '@heroicons/react/outline';
+import { 
+  ChevronDownIcon, 
+  UserCircleIcon, 
+  CogIcon, 
+  LogoutIcon 
+} from '@heroicons/react/24/outline';
+import { Fragment } from 'react';
 
 export default function Header() {
   const { user, logout } = useAuth();

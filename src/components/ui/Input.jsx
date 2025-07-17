@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { ExclamationCircleIcon } from '@heroicons/react/solid';
+import { ExclamationCircleIcon } from '@heroicons/react/24/solid';
 
 const Input = forwardRef(({
   label,
