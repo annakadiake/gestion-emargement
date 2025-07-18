@@ -5,7 +5,7 @@ import {
   ChevronDownIcon, 
   UserCircleIcon, 
   CogIcon, 
-  LogoutIcon 
+  ArrowRightOnRectangleIcon 
 } from '@heroicons/react/24/outline';
 import { Fragment } from 'react';
 
@@ -80,7 +80,7 @@ export default function Header() {
                         } block w-full text-left px-4 py-2 text-sm`}
                       >
                         <div className="flex items-center">
-                          <LogoutIcon className="h-4 w-4 mr-2" />
+                          <ArrowRightOnRectangleIcon className="h-4 w-4 mr-2" />
                           Déconnexion
                         </div>
                       </button>
